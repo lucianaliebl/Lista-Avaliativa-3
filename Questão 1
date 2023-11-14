@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char romano[13];
+    int tamanho;
+    int valorAtual;
+    int proximoValor;
+    int resultado = 0;
+
+    printf("Qual o nomero romano?");
+    scanf("%12s", romano);
+
+    tamanho = strlen(romano);
+
+    for(int i = 0; i < tamanho; i++){
+        
+        if (romano[i] == 'I'){
+            valorAtual = 1;
+        } else if (romano[i] == 'V'){
+            valorAtual = 5;
+        } else if (romano[i] == 'X'){
+            valorAtual = 10;
+        } else if (romano[i] == 'L'){
+            valorAtual = 50;
+        } else if (romano[i] == 'C'){
+            valorAtual = 100;
+        } else if (romano[i] == 'D'){
+            valorAtual = 500;
+        } else if (romano[i] == 'M'){
+            valorAtual = 1000;
+        }
+        
+
+           if (i < tamanho - 1){
+              if (romano[i+1] == 'I'){
+                proximoValor = 1;
+              } else if (romano[i + 1] == 'V'){
+                proximoValor = 5;
+              } else if (romano[i + 1] == 'X'){
+                proximoValor = 10;
+              } else if (romano[i + 1] == 'L'){
+                proximoValor = 50;
+              } else if (romano[i + 1] == 'C'){
+                proximoValor = 100;
+              } else if (romano[i + 1] == 'D'){
+                proximoValor = 500;
+              } else if (romano[i + 1] == 'M'){
+                proximoValor = 1000;
+              }
+
+                if (valorAtual < proximoValor){
+                   resultado += proximoValor - valorAtual;
+                   i++; // passa para o próximo algarismo
+                } else {
+                   resultado += valorAtual;
+                }
+         
+            } else {
+                resultado += valorAtual;
+            } 
+    }
+
+    printf("O Valor em decimal eh: %d\n", resultado);
+    
+    return 0;
+}
