@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    int T; 
+    double A;
+    double i;
+    double V;
+
+    scanf("%d", &T);
+    scanf("%lf", &A);
+    scanf("%lf", &i);
+
+    for(int j = 1; j <= T; j++){
+      V = A * (1 + i) * (pow((1+i), j) - 1)/i;
+      printf("Montante ao fim do mes %d: R$ %.2lf\n", j, V);
+    }
+    
+    return 0;
+}
