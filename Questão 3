@@ -1,0 +1,95 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+  char placa[9];
+  char dia[15];
+  char diaSemana [7][15] = {"SEGUNDA-FEIRA", "TERCA-FEIRA", "QUARTA-FEIRA", "QUINTA-FEIRA", "SEXTA-FEIRA", "SABADO", "DOMINGO"};
+  int diaValido = 0; 
+  int placaValida = 0;
+ 
+    
+  scanf("%s", placa);
+  scanf("%s", dia); 
+
+  int tamanhoPlaca = strlen(placa);
+
+  if(tamanhoPlaca != 7 || tamanhoPlaca != 8){
+    printf("Placa invalida\n");
+  }
+
+  if(tamanhoPlaca == 7){
+    for(int i = 0; i < 3; i++){
+      tamanhoPlaca[0]
+    }
+  }
+
+  if(tamanhoPlaca == 7 || tamanhoPlaca == 8){
+      for(int i = 0; i < 3; i++){
+          if(i == "A" || i == "B" ||i == "C" || i == "D" || i == "E" || i == "F" || i == "G" || i == "H" || i == "I" || i == "J" || i == "K" || i == "L" || i == "M" || i == "N" || i == "O" || i == "P" || i == "Q" || i == "R" || i == "S" || i == "T" || i == "U" || i == "V" || i == "X" || i == "Y" || i == "Z"){
+            printf("Placa valida\n");
+          }
+      }
+  } else{
+    printf("Placa invalida\n"); 
+  }
+
+
+
+
+  for(int i = 0; i < 7; i++){
+    if(strcmp(dia, diaSemana[i]) == 0){
+      diaValido = 1;
+      break;
+    }  
+  }
+
+  if(diaValido != 1){
+      printf("Dia da semana invalido\n");
+  }
+    
+    return 0;
+}
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+  char placa[9];
+  char dia[15];
+  char diaSemana [7][15] = {"SEGUNDA-FEIRA", "TERCA-FEIRA", "QUARTA-FEIRA", "QUINTA-FEIRA", "SEXTA-FEIRA", "SABADO", "DOMINGO"};
+  int diaValido = 0; 
+  int placaValida = 0;
+ 
+    
+  scanf("%s", placa);
+  scanf("%s", dia); 
+
+  int tamanhoPlaca = strlen(placa);
+
+  if(tamanhoPlaca != 7 && tamanhoPlaca != 8){
+    placaValida = 0;
+    printf("Placa invalida\n");
+  }
+
+  if(tamanhoPlaca == 8){
+    if(!(placa[0] >= 'A' && placa[0] <= 'Z') ||
+       !(placa[1] >= 'A' && placa[1] <= 'Z') ||
+       !(placa[2] >= 'A' && placa[2] <= 'Z') ||
+       placa[3] != '-'||
+       !(placa[4] >= '0' && placa[4] <= '9') ||
+       !(placa[5] >= '0' && placa[5] <= '9') ||
+       !(placa[6] >= '0' && placa[6] <= '9') ||
+       !(placa[7] >= '0' && placa[7] <= '9')){
+        placaValida = 0;
+        printf("Placa invalida\n");
+       } else {
+        placaValida = 1;
+        printf("Placa Valida\n");
+       }
+  }   
+  
+    return 0;
+  
+}
